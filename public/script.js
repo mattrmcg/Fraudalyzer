@@ -20,7 +20,16 @@ async function getData() {
         const result = await response.json();
         console.log('Processed Result:', result.result);
 
-        const filepath = './result.txt';
+        fetch('/getTextFileContent')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch file content');
+                }
+                return response.text();
+            })
+            .then(fileContent => {
+                document.getElementById('fileContentLabel').textContent = fileContent;
+            });
 
         fs.readFile(filePath, 'utf-8', (err, data) => {
             if (err) {
@@ -35,3 +44,4 @@ async function getData() {
     }
     console.log(enteredText);
 };
+

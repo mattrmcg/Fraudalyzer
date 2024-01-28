@@ -27,7 +27,7 @@ app.post('/get-data', async (req, res) => {
 });
 
 async function getInference(csvData) {
-    const csv_string = "0.9, 0.990414754481376, 11, 4, 40, 0.0146395901020007, -0.897717544979573, AC, 1853, 6711.52302668149, 4868.77948800739, 4988.82796078214, 0, 19, CA, 113, 1, BC, 0, 1, -1, 0, 200, 0, INTERNET, 6.15031705083009, windows, 0, 1, 0, 0";
+    const csv_string = csvData;
 
     try {
         const { stdout, stderr } = await execPromise(`aws --region us-east-1 sagemaker-runtime invoke-endpoint --endpoint-name canvas-deployment-2 --cli-binary-format raw-in-base64-out --body "${csv_string}" --content-type text/csv --accept application/json result.txt`);
@@ -40,8 +40,15 @@ async function getInference(csvData) {
 }
 
 app.get('/getTextFileContent', (req, res) => {
-    const filePath = 'result.txt'
-})
+    const filePath = './result.txt';
+    fs.readFile(filePath, 'utf-8', (err, data) => {
+        if (err) {
+            res.status(500).send('Error reading file');
+        } else {
+            res.send(data);
+        }
+    });
+});
 
 app.use(express.static('public'));
 
