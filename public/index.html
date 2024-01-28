@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <img src="/media/Fraudylizer-logos.jpeg"/>
+    </div>
+    <div class="uploadtitle">
+        <h1>Input Your Data Below!</h1>
+    </div>
+    <div class="uploadbox">
+        <form id="textInputForm">
+            <label for="textInput">Enter your data in CSV format<br>
+                (e.g. 0,0.9,0.990414754481376,11,...):</label>
+            <input type="text" id="textInput" name="textInput" placeholder="  Enter data...">
+            <button type="button" onclick="getData()">Submit</button>
+        </form>
+    </div>
+    <div class="resultbox">
+    </div>
+    <footer>
+        <p>&copy; 2024 Fraudylizer - All rights reserved.</p>
+    </footer>
+</body>
+</html>

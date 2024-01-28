@@ -1,0 +1,114 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+
+    background: linear-gradient(-45deg, #49c9fc, #0066cc, #0c42d8, #49c9fc);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 140vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+label {
+    position: absolute;
+    top: 20px;
+    border-radius: 10px;
+    padding: 5px;
+    width: 270px;
+    background-color: #3b89e9;
+    color: white;
+    left: 25%;
+}
+
+input {
+    position: absolute;
+    border-radius: 8px;
+    left: 180px;
+    top: 100px;
+}
+
+button {
+    position: absolute;
+    top: 140px;
+    border-radius: 10px;
+    left: 240px;
+}
+
+img {
+    width: 600px; 
+    max-height: 150px;
+    left: 50%;
+    right: 50%;
+    object-fit: cover;
+    object-position: 50% 50%; 
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+div {
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #076AE1;
+}
+
+div.header {
+    position: fixed;
+    padding: 0px;
+    width: 100%;
+    top: 0px;
+    z-index: 1;
+    border: 15px solid #0066cc;
+}
+
+div.uploadtitle {
+    position: absolute;
+    top: 300px;
+    border-radius: 20px;
+    height: 10px;
+    font-size: 10px;
+    padding: 15px;
+    background-color: #3b89e9;
+    color: white;
+    border-color: transparent;
+}
+
+div.uploadbox {
+    position: absolute;
+    top: 400px;
+    height: 150px;
+    width: 500px;
+    border-radius: 40px;
+}
+
+div.resultbox {
+    position: absolute;
+    top: 650px;
+    height: 500px;
+    width: 800px;
+    border-radius: 40px;
+}

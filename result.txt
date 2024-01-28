@@ -1,0 +1,1 @@
+{"predictions": [{"predicted_label": "0", "probability": "0.020061399787664413", "probabilities": "[0.9799386002123356, 0.020061399787664413]", "labels": "['0', '1']"}]}
