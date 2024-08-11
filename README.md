@@ -7,7 +7,7 @@ It was developed in a team of five as part of LPL's 2024 Hackerama. It's meant t
 There's an included link to a live demo above. You can use the live demo to test out different bank account application json requests, as well as prepopulate the json fields with pre-determined fraudulent and non-fraudulent data.
 
 ## Model
-Our model was a Random Forest Classifier, trained and deployed on AWS SageMaker using a publicly available [dataset](https://www.kaggle.com/datasets/sgpjesus/bank-account-fraud-dataset-neurips-2022). When tested against sample data, our model produced a prediction accuracy of 98%.
+Our model was a Random Forest Classifier, trained and deployed on AWS SageMaker using a publicly available [dataset](https://www.kaggle.com/datasets/sgpjesus/bank-account-fraud-dataset-neurips-2022) of synthesized fraudulent and non-fraudulent bank-account application data. When tested against sample data, our model produced a prediction accuracy of 98%.
 
 ## Description
 The application consists of a web server built using Express.js coupled with the aforementioned predictive model. The web server has an endpoint titled `/get-data/`. When `/get-data/` is called, the web server relays the sample data provided in the route's request body to the SageMaker model, and returns the model's inference. 
@@ -17,8 +17,7 @@ In the context of banking and finance, we envisioned this as a backend tool or m
 The web server was hosted on an AWS EC2 instance running Ubuntu Server. Our training dataset was stored and retrieved from an S3 bucket, and our model was deployed on SageMaker. Both the S3 bucket and the SageMaker endpoint were closed off to the public in a private vpc network, while our EC2 instance provided the sole point of public access for making inferences.
 
 
-**NOTE**: Please allow for any unique "design decisions" you may encounter in the source code :wink:. Training the model took about 4 hours, and the latter half of this project was built at 4am on minimal sleep. For example, you may notice the use of terminal commands to retrieve our prediction data. We encountered a number 
-of problems attempting to get the SageMaker API to function properly, however we were able to get the AWS CLI to work. Since we didn't have much time left at this point, we decided to use node.js's `stdout` stream in conjunction with the AWS CLI to retrieve our data. 
+**NOTE**: Many SageMaker models are proprietarily owned by Amazon and therefore cannot be saved anywhere outside of SageMaker or S3, including the model we used. When the hackathon ended, access to the hackathon-provided aws accounts was revoked. In an effort to produce a tangible application for any interested parties, we've retrained and redeployed the model at the live site mentioned at the top. The training code in python for the redeployed model can be found in the `training` folder of this repository. The redeployed model was once again a Random Forest Classifier, trained using python's SciKit-Learn library.
 
 Thank you to everyone who contributed:\
 [mattrmcg](https://github.com/mattrmcg)\
