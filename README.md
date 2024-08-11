@@ -4,18 +4,17 @@ Fraudalyzer is a backend API that can identify fraudulent bank account applicati
 
 It was developed in a team of five as part of LPL's 2024 Hackerama. It's meant to highlight the potential use cases of artificial intelligence and machine learning in finance. 
 
-There's an included link to a live demo above. You can use the live demo to test out differant bank account application json requests, as well as prepopulate the json fields with pre-determined fraudulent and non-fraudulent data.
+There's an included link to a live demo above. You can use the live demo to test out different bank account application json requests, as well as prepopulate the json fields with pre-determined fraudulent and non-fraudulent data.
 
 ## Model
-Our model was trained and deployed on AWS SageMaker, using a publicly available [dataset](https://www.kaggle.com/datasets/sgpjesus/bank-account-fraud-dataset-neurips-2022). When tested against sample data, our model produced a prediction accuracy of 98%.
+Our model was a Random Forest Classifier, trained and deployed on AWS SageMaker using a publicly available [dataset](https://www.kaggle.com/datasets/sgpjesus/bank-account-fraud-dataset-neurips-2022). When tested against sample data, our model produced a prediction accuracy of 98%.
 
 ## Description
-The application consists of a web server built using Express.js, coupled with the aforementioned predictive model. The web server has an endpoint titled `/get-data/`, meant to send the sample data instance provided in the request body to the SageMaker model, and return the model's prediction. 
+The application consists of a web server built using Express.js coupled with the aforementioned predictive model. The web server has an endpoint titled `/get-data/`. When `/get-data/` is called, the web server relays the sample data provided in the route's request body to the SageMaker model, and returns the model's inference. 
 
-In the context of finance, we envisioned this as a backend tool or 
-middleware which would accept a stream of bank account data to perform predictions on, adding a layer of automation to the process of fraud detection for large banks.
+In the context of banking and finance, we envisioned this as a backend tool or middleware which would accept a request of bank account application data upon each attempted online application submission. An attempted submission would trigger an inference to be made on the data. This would provide banking companies with an entirely automated layer of fraud prediction to integrate with their existing security infrastructure.
 
-The web server was hosted on an AWS EC2 instance, and our training dataset was stored in an S3 bucket. 
+The web server was hosted on an AWS EC2 instance running Ubuntu Server. Our training dataset was stored and retrieved from an S3 bucket, and our model was deployed on SageMaker. Both the S3 bucket and the SageMaker endpoint were closed off to the public in a private vpc network, while our EC2 instance provided the sole point of public access for making inferences.
 
 
 **NOTE**: Please allow for any unique "design decisions" you may encounter in the source code :wink:. Training the model took about 4 hours, and the latter half of this project was built at 4am on minimal sleep. For example, you may notice the use of terminal commands to retrieve our prediction data. We encountered a number 
