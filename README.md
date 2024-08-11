@@ -1,6 +1,10 @@
 ## Fraudalyzer
-[Live API Demo](https://fraudalyzer-frontend.vercel.app/) <br>
-Fraudalyzer is a backend API that can identify fraudulent bank account applications. The Federal Trade Commision estimates that bank account and credit line fraud can end up costing companies billions in monetary losses every year. Fraudalyzer could be the first step in identifying and mitigating these losses. It was developed in a team of five as part of LPL's 2024 Hackerama. It's meant to highlight the potential use cases of artificial intelligence and machine learning in finance. There's an included link to a live demo above. You can use the live demo to test out differant bank account application json requests, as well as prepopulate the json fields with pre-determined fraudulent and non-fraudulent data.
+[Live API Demo](https://fraudalyzer-frontend.vercel.app/) <br> <br>
+Fraudalyzer is a backend API that can identify fraudulent bank account applications. The Federal Trade Commision estimates that bank account and credit line fraud can end up costing companies billions in monetary losses every year. Fraudalyzer could be the first step in identifying and mitigating these losses.
+
+It was developed in a team of five as part of LPL's 2024 Hackerama. It's meant to highlight the potential use cases of artificial intelligence and machine learning in finance. 
+
+There's an included link to a live demo above. You can use the live demo to test out differant bank account application json requests, as well as prepopulate the json fields with pre-determined fraudulent and non-fraudulent data.
 
 ## Model
 Our model was trained and deployed on AWS SageMaker, using a publicly available [dataset](https://www.kaggle.com/datasets/sgpjesus/bank-account-fraud-dataset-neurips-2022). When tested against sample data, our model produced a prediction accuracy of 98%.
