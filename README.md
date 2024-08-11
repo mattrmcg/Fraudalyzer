@@ -1,4 +1,5 @@
 ## Fraudalyzer
+[Live API Demo]https://fraudalyzer-frontend.vercel.app/
 Fraudalyzer is a bank account fraud prediction application that was developed in a team of five as part of LPL's 2024 Hackerama. It's meant to highlight the potential use cases of artificial intelligence and machine learning in finance.
 
 ## Model
