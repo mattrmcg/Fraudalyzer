@@ -1,5 +1,8 @@
 ## Fraudalyzer
 [Live API Demo](https://fraudalyzer-frontend.vercel.app/) <br> <br>
+
+![frd](https://github.com/user-attachments/assets/fd959267-a3b0-4d74-907c-e00d11c0b904)
+
 Fraudalyzer is a backend API that can identify fraudulent bank account applications. The Federal Trade Commision estimates that bank account and credit line fraud can end up costing companies billions in monetary losses every year. Fraudalyzer could be the first step in identifying and mitigating these losses.
 
 It was developed in a team of five as part of LPL's 2024 Hackerama. It's meant to highlight the potential use cases of artificial intelligence and machine learning in finance. 
